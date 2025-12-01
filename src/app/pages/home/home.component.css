@@ -1,0 +1,44 @@
+.professora-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.professora-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1100px;
+}
+
+.professora-foto img {
+  width: 260px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.professora-info h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.professora-info p {
+  font-size: 18px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .professora-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .professora-info p {
+    text-align: center;
+  }
+}

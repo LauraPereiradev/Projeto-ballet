@@ -1,0 +1,97 @@
+/* NAVBAR BASE */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* LOGO */
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #b56576;
+    text-decoration: none;
+  }
+  
+  /* MENU DESKTOP */
+  .navbar ul {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    list-style: none;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    transition: 0.3s;
+  }
+  
+  .navbar ul li a:hover,
+  .navbar ul li a.active {
+    color: #b56576;
+  }
+  
+  /* BOTÃO LOGIN */
+  .login-btn {
+    padding: 8px 14px;
+    background-color: #b56576;
+    color: white !important;
+    border-radius: 8px;
+  }
+  
+  .login-btn:hover {
+    background-color: #a15264;
+  }
+  
+  /* MENU MOBILE */
+  .menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .menu-icon span {
+    width: 28px;
+    height: 3px;
+    background: #b56576;
+    border-radius: 5px;
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width: 850px) {
+    .menu-icon {
+      display: flex;
+    }
+  
+    .navbar ul {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background: white;
+      width: 200px;
+      flex-direction: column;
+      padding: 20px;
+      gap: 18px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(20px);
+      transition: 0.3s;
+    }
+  
+    .navbar ul.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0);
+    }
+  }
+  

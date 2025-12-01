@@ -1,0 +1,62 @@
+<div class="aulas-container">
+  <h1>Modalidades de Aula</h1>
+
+  <div id="carouselAulas" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+    <div class="carousel-inner">
+
+      <!-- Carrossel Automático -->
+      <div *ngFor="let img of imagens; let i = index"
+           class="carousel-item"
+           [class.active]="i === 0">
+        <img [src]="'assets/img/' + img" class="d-block w-100" [alt]="img">
+      </div>
+
+    </div>
+
+    <!-- Botões -->
+    <button class="carousel-control-prev" type="button"
+            data-bs-target="#carouselAulas" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button"
+            data-bs-target="#carouselAulas" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <p class="intro">
+    Escolha a turma ideal para você. Todas as aulas são preparadas com carinho,
+    técnica e atenção ao desenvolvimento individual de cada aluna.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <h2>Baby Class</h2>
+      <p>Ideal para crianças de 3 a 6 anos, desenvolvendo postura, coordenação e musicalidade.</p>
+      <span class="horario">Segunda e Quarta — 18h às 19h</span>
+    </div>
+
+    <div class="card">
+      <h2>Juvenil</h2>
+      <p>Para jovens de 7 a 14 anos que buscam evolução técnica e disciplina artística.</p>
+      <span class="horario">Terça e Quinta — 16h às 17h</span>
+    </div>
+
+    <div class="card">
+      <h2>Adulto</h2>
+      <p>Turma acolhedora, perfeita para iniciantes ou para quem deseja retornar ao ballet.</p>
+      <span class="horario">Terça e Quinta — 19h às 20h</span>
+    </div>
+
+    <div class="card">
+      <h2>Alongamento & Flexibilidade</h2>
+      <p>Aulas focadas em consciência corporal, força e amplitude de movimento.</p>
+      <span class="horario">Sábados — 10h às 11h</span>
+    </div>
+
+  </div>
+
+  <a class="btn-contato" href="/contato">Quero me inscrever!</a>
+</div>

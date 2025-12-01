@@ -1,0 +1,72 @@
+.aulas-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 25px;
+    color: #b56576;
+  }
+  
+  .intro {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #4a4a4a;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+  }
+  
+  .card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    border-left: 6px solid #b56576;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+  }
+  
+  .card h2 {
+    color: #6d6875;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    line-height: 1.5;
+  }
+  
+  .horario {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #b56576;
+  }
+  
+  .btn-contato {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    padding: 12px 25px;
+    background-color: #b56576;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  
+  .btn-contato:hover {
+    background-color: #a15264;
+  }
+  

@@ -1,0 +1,40 @@
+.cadastro-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00000022;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #d81b60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ad164c;
+}
+
+.erro {
+  color: red;
+  margin-top: 10px;
+}
+
+.sucesso {
+  color: green;
+  margin-top: 10px;
+}

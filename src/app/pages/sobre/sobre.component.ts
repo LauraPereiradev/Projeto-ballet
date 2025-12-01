@@ -1,0 +1,11 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-sobre',
+  standalone: true,
+  templateUrl: './sobre.component.html',
+  styleUrl: './sobre.component.css'
+})
+export class SobreComponent {
+  // Caso futuramente queira buscar imagens pelo service, podemos adicionar lógica aqui.
+}
