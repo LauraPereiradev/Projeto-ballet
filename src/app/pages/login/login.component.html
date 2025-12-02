@@ -2,33 +2,29 @@
 
   <h2>Login</h2>
 
-  <form (ngSubmit)="fazerLogin()" #loginForm="ngForm">
+  <form #loginForm="ngForm" (ngSubmit)="fazerLogin()">
 
-    <div class="form-group">
-      <label for="cpf">CPF</label>
-      <input
-        type="text"
-        id="cpf"
-        name="cpf"
-        [(ngModel)]="cpf"
-        (input)="limitarCPF()"
-        required
-        placeholder="Digite seu CPF"
-      />
-    </div>
+    <label for="cpf">CPF</label>
+    <input
+      type="text"
+      id="cpf"
+      name="cpf"
+      [(ngModel)]="cpf"
+      (input)="limitarCPF()"
+      required
+      placeholder="Digite seu CPF"
+    />
 
-    <div class="form-group">
-      <label for="nascimento">Data de Nascimento</label>
-      <input
-        type="date"
-        id="nascimento"
-        name="nascimento"
-        [(ngModel)]="nascimento"
-        required
-      />
-    </div>
+    <label for="nascimento">Data de Nascimento</label>
+    <input
+      type="date"
+      id="nascimento"
+      name="nascimento"
+      [(ngModel)]="nascimento"
+      required
+    />
 
-    <button type="submit" class="btn-login" [disabled]="loginForm.invalid">
+    <button class="btn-login" type="submit" [disabled]="loginForm.invalid">
       Entrar
     </button>
 
@@ -41,4 +37,14 @@
     Criar conta
   </button>
 
+</div>
+
+<div class="usuario-info" *ngIf="usuarioLogado">
+  <h2>Usuário Logado</h2>
+
+  <p><strong>Nome:</strong> {{ usuarioLogado.nome }}</p>
+  <p><strong>CPF:</strong> {{ usuarioLogado.cpf }}</p>
+  <p><strong>Nascimento:</strong> {{ usuarioLogado.nascimento }}</p>
+
+  <button class="btn-sair" (click)="sair()">Sair</button>
 </div>

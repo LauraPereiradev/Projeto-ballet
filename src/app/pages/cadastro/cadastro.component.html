@@ -2,24 +2,66 @@
 
   <h2>Cadastro de Usuário</h2>
 
-  <label>Nome</label>
-  <input type="text" [(ngModel)]="nome" placeholder="Seu nome completo" />
+  <form #cadastroForm="ngForm" (ngSubmit)="registrar(cadastroForm)">
 
-  <label>CPF</label>
-  <input 
-    type="text"
-    [(ngModel)]="cpf"
-    (input)="limitarCPF()"
-    maxlength="11"
-    placeholder="Digite seu CPF"
-  />
+    <label>Nome</label>
+    <input 
+      type="text"
+      name="nome"
+      [(ngModel)]="nome"
+      required
+      placeholder="Seu nome completo"
+    />
 
-  <label>Data de Nascimento</label>
-  <input type="date" [(ngModel)]="nascimento" />
+    <label>CPF</label>
+    <input 
+      type="text"
+      name="cpf"
+      [(ngModel)]="cpf"
+      (input)="limitarCPF()"
+      maxlength="11"
+      required
+      placeholder="Digite seu CPF"
+    />
 
-  <button (click)="registrar()">Cadastrar</button>
+    <label>Data de Nascimento</label>
+    <input 
+      type="date"
+      name="nascimento"
+      [(ngModel)]="nascimento"
+      required
+    />
+
+    <!-- LGPD -->
+    <div class="lgpd-box">
+      <input 
+        type="checkbox"
+        id="lgpd"
+        name="lgpd"
+        [(ngModel)]="lgpdAceito"
+        required
+      />
+      <label for="lgpd">
+        Concordo com a política de privacidade e autorizo o uso dos meus dados conforme a LGPD.
+      </label>
+    </div>
+
+    <button 
+      class="btn-cadastro"
+      type="submit"
+      [disabled]="cadastroForm.invalid || !lgpdAceito">
+      Cadastrar
+    </button>
+
+  </form>
 
   <p class="erro" *ngIf="erro">{{ erro }}</p>
-  <p class="sucesso" *ngIf="sucesso">{{ sucesso }}</p>
+
+  <p class="sucesso" *ngIf="sucesso">
+    {{ sucesso }} <br><br>
+    <strong>Nome:</strong> {{ nome }} <br>
+    <strong>CPF:</strong> {{ cpf }} <br>
+    <strong>Data de Nascimento:</strong> {{ nascimento }}
+  </p>
 
 </div>

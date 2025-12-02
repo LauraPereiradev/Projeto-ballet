@@ -1,44 +1,61 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { ApiService } from '../../services/api.service';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro',
   standalone: true,
-  imports: [CommonModule, FormsModule],
   templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  styleUrls: ['./cadastro.component.css'],
+  imports: [CommonModule, FormsModule]
 })
 export class CadastroComponent {
 
-  nome = '';
-  cpf = '';
-  nascimento = '';
-  erro = '';
-  sucesso = '';
+  nome: string = '';
+  cpf: string = '';
+  nascimento: string = '';
+  lgpdAceito: boolean = false;
 
-  constructor(private api: ApiService) {}
+  erro: string = '';
+  sucesso: string = '';
 
-  registrar() {
+  limitarCPF() {
+    if (this.cpf.length > 11) {
+      this.cpf = this.cpf.slice(0, 11);
+    }
+  }
+
+  registrar(form: NgForm) {
+
     this.erro = '';
     this.sucesso = '';
 
-    this.api.cadastrarUsuario({
+    if (!form.valid) {
+      this.erro = 'Preencha todos os campos corretamente.';
+      return;
+    }
+
+    if (!this.lgpdAceito) {
+      this.erro = 'Você precisa aceitar os termos da LGPD.';
+      return;
+    }
+
+    const usuario = {
       nome: this.nome,
       cpf: this.cpf,
       nascimento: this.nascimento
-    }).subscribe({
-      next: () => {
-        this.sucesso = "Usuário cadastrado com sucesso!";
-      },
-      error: () => {
-        this.erro = "Erro ao cadastrar. Verifique os dados.";
-      }
-    });
-  }
+    };
 
-  limitarCPF() {
-    this.cpf = this.cpf.replace(/[^0-9]/g, '').slice(0, 11);
+    // Salva no localStorage
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+
+    this.sucesso = 'Cadastro realizado com sucesso!';
+
+    form.resetForm({
+      nome: '',
+      cpf: '',
+      nascimento: '',
+      lgpdAceito: false
+    });
   }
 }

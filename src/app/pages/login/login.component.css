@@ -112,3 +112,15 @@ input:focus {
     font-size: 15px;
   }
 }
+
+.sucesso {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.lgpd-box {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-top: 10px;
+}

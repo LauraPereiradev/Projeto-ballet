@@ -1,50 +1,52 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ApiService } from '../../services/api.service';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  imports: [CommonModule, FormsModule, RouterLink]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  cpf = '';
-  nascimento = '';
-  erro = '';
+  cpf: string = '';
+  nascimento: string = '';
+  erro: string = '';
   usuarioLogado: any = null;
 
-  constructor(private api: ApiService) {}
+  constructor(private router: Router) {}
 
-  ngOnInit() {
-    /** Carrega usuário salvo no LocalStorage */
-    this.usuarioLogado = this.api.getUsuarioLogado();
+  limitarCPF() {
+    if (this.cpf.length > 11) {
+      this.cpf = this.cpf.slice(0, 11);
+    }
   }
 
   fazerLogin() {
     this.erro = '';
 
-    this.api.login(this.cpf, this.nascimento).subscribe({
-      next: (usuario: any) => {
-        this.usuarioLogado = usuario;
-      },
-      error: () => {
-        this.erro = "CPF ou data de nascimento incorretos";
-      }
-    });
+    const usuario = localStorage.getItem('usuario');
+
+    if (!usuario) {
+      this.erro = 'Nenhum usuário cadastrado.';
+      return;
+    }
+
+    const dados = JSON.parse(usuario);
+
+    if (dados.cpf === this.cpf && dados.nascimento === this.nascimento) {
+      this.usuarioLogado = dados;
+    } else {
+      this.erro = 'CPF ou data de nascimento incorretos.';
+    }
   }
 
   sair() {
-    this.api.logout();
     this.usuarioLogado = null;
-  }
-
-  /** LIMITA CPF PARA 11 DÍGITOS */
-  limitarCPF() {
-    this.cpf = this.cpf.replace(/[^0-9]/g, '').slice(0, 11);
+    this.cpf = '';
+    this.nascimento = '';
   }
 }
