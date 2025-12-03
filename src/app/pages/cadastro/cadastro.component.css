@@ -1,40 +1,123 @@
+/* CONTAINER PRINCIPAL */
 .cadastro-container {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #fafafa;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #00000022;
+  max-width: 420px;
+  margin: 45px auto;
+  padding: 30px;
+  background: #fff5fa; /* Rosa pastel bem leve */
+  border-radius: 18px;
+  box-shadow: 0px 6px 18px rgba(255, 150, 190, 0.25);
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #ffd6e8; /* contorno leve */
 }
 
-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* TÍTULO */
+.cadastro-container h2 {
+  text-align: center;
+  margin-bottom: 22px;
+  color: #d13b8b; /* rosa elegante */
+  font-weight: 700;
+  font-size: 24px;
 }
 
-button {
+/* LABELS */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #a63d72; /* rosa queimado */
+  font-size: 14px;
+}
+
+/* INPUTS */
+input[type="text"],
+input[type="date"] {
   width: 100%;
   padding: 12px;
-  background: #d81b60;
-  color: white;
+  border: 1px solid #f3b6d3;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: 0.3s;
+  font-size: 14px;
+  background: #fff;
+}
+
+input:focus {
+  border-color: #d13b8b;
+  box-shadow: 0px 0px 8px rgba(209, 59, 139, 0.35);
+}
+
+/* CHECKBOX LGPD */
+.lgpd-box {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.lgpd-box input {
+  accent-color: #d13b8b; /* deixa o checkbox rosa */
+}
+
+.lgpd-box label {
+  font-size: 13px;
+  color: #7a355c;
+  line-height: 1.3rem;
+}
+
+/* BOTÃO CADASTRAR */
+.btn-cadastro {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #d13b8b, #ff77b7);
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-}
-
-button:hover {
-  background: #ad164c;
-}
-
-.erro {
-  color: red;
+  transition: 0.3s;
   margin-top: 10px;
+}
+
+.btn-cadastro:hover {
+  background: linear-gradient(135deg, #b82f77, #ff5fa9);
+}
+
+.btn-cadastro:disabled {
+  background: #e9b6d1;
+  cursor: not-allowed;
+  color: #ffffffc9;
+}
+
+/* BOTÃO LOGIN */
+.login-btn {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #c23a85;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.login-btn:hover {
+  text-decoration: underline;
+  color: #a92f71;
+}
+
+/* MENSAGENS */
+.erro {
+  color: #e63946;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 600;
 }
 
 .sucesso {
-  color: green;
-  margin-top: 10px;
+  color: #2b9348;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 600;
 }

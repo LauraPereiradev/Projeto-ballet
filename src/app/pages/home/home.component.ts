@@ -1,19 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ImageService } from '../../services/image.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-
-  fotoProf = '';
-
-  constructor(private imageService: ImageService) {
-    this.fotoProf = this.imageService.professora;
-  }
+  constructor() {}
 }

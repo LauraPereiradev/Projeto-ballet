@@ -1,79 +1,86 @@
-.sobre-container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
-    animation: fadeIn 0.6s ease-in-out;
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    color: #b02660; /* Rosa principal */
-  }
-  
-  .perfil {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-  
-  .perfil img {
-    width: 350px;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 18px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .texto {
-    flex: 1;
-    max-width: 500px;
-  }
-  
-  .texto h2 {
-    font-size: 1.9rem;
-    color: #b02660;
-    margin-bottom: 15px;
-  }
-  
-  .texto p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #444;
-    margin-bottom: 15px;
-  }
-  
-  .btn-agendar {
-    display: inline-block;
-    padding: 12px 24px;
-    background: #b02660;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    margin-top: 10px;
-    font-weight: 600;
-    transition: 0.3s;
-  }
-  
-  .btn-agendar:hover {
-    background: #d63f7c;
-    transform: translateY(-3px);
-  }
-  
-  /* Animação suave ao carregar */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+/* ======== CONTAINER PRINCIPAL ======== */
+.home-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
-  
+/* ======== SEÇÃO PROFESSORA ======== */
+.home-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.professora-foto {
+  flex: 1;
+  text-align: center;
+}
+
+.foto-prof {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffc0cb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.professora-info {
+  flex: 2;
+  padding: 20px;
+}
+
+.titulo {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #d63384;
+}
+
+.professora-info p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ======== SEÇÃO ESCOLA ======== */
+.escola-container {
+  margin-top: 20px;
+  background: #fff0f5;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.escola-container p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.endereco {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+/* ======== BOTÃO ======== */
+.btn-sobre {
+  padding: 12px 25px;
+  background-color: #d63384;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn-sobre:hover {
+  background-color: #b0266c;
+}

@@ -8,7 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './aulas.component.html',
   styleUrls: ['./aulas.component.css']
 })
-
 export class AulasComponent {
 
   imagens = [
@@ -33,7 +32,8 @@ export class AulasComponent {
     "39.jpeg",
     "img 3.jpeg",
     "img 4.jpeg",
-    "img 5.jpeg"
+    "img 5.jpeg",
+    
   ];
 
 }

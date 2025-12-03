@@ -1,14 +1,18 @@
 <div class="aulas-container">
   <h1>Modalidades de Aula</h1>
 
-  <div id="carouselAulas" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+  <div id="carouselAulas" class="carousel slide carousel-fade"
+       data-bs-ride="carousel" data-bs-interval="3000">
+
     <div class="carousel-inner">
 
-      <!-- Carrossel Automático -->
       <div *ngFor="let img of imagens; let i = index"
-           class="carousel-item"
+           class="carousel-item" 
            [class.active]="i === 0">
-        <img [src]="'assets/img/' + img" class="d-block w-100" [alt]="img">
+
+        <img [src]="'assets/img/' + img" 
+             class="carousel-img" 
+             [alt]="img">
       </div>
 
     </div>
@@ -23,6 +27,7 @@
             data-bs-target="#carouselAulas" data-bs-slide="next">
       <span class="carousel-control-next-icon"></span>
     </button>
+
   </div>
 
   <p class="intro">

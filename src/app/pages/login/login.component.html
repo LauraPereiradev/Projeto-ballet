@@ -1,8 +1,9 @@
 <div class="login-container">
 
-  <h2>Login</h2>
+  <!-- FORMULÁRIO DE LOGIN -->
+  <h2 *ngIf="!usuarioLogado">Login</h2>
 
-  <form #loginForm="ngForm" (ngSubmit)="fazerLogin()">
+  <form *ngIf="!usuarioLogado" #loginForm="ngForm" (ngSubmit)="fazerLogin()">
 
     <label for="cpf">CPF</label>
     <input
@@ -31,20 +32,20 @@
     <p class="erro" *ngIf="erro">{{ erro }}</p>
   </form>
 
-  <p class="cadastro-texto">Não possui cadastro?</p>
+  <!-- SE ESTIVER LOGADO -->
+  <div *ngIf="usuarioLogado" class="usuario-info">
+    <h2>Bem-vindo(a), {{ usuarioLogado.nome }}!</h2>
 
-  <button class="btn-cadastro" routerLink="/cadastro">
+    <p><strong>CPF:</strong> {{ usuarioLogado.cpf }}</p>
+    <p><strong>Data de Nascimento:</strong> {{ usuarioLogado.nascimento }}</p>
+
+    <button class="btn-sair" (click)="sair()">Sair</button>
+  </div>
+
+  <p class="cadastro-texto" *ngIf="!usuarioLogado">Não possui cadastro?</p>
+
+  <button class="btn-cadastro" *ngIf="!usuarioLogado" routerLink="/cadastro">
     Criar conta
   </button>
 
-</div>
-
-<div class="usuario-info" *ngIf="usuarioLogado">
-  <h2>Usuário Logado</h2>
-
-  <p><strong>Nome:</strong> {{ usuarioLogado.nome }}</p>
-  <p><strong>CPF:</strong> {{ usuarioLogado.cpf }}</p>
-  <p><strong>Nascimento:</strong> {{ usuarioLogado.nascimento }}</p>
-
-  <button class="btn-sair" (click)="sair()">Sair</button>
 </div>

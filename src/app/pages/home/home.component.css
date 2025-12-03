@@ -1,44 +1,152 @@
-.professora-container {
+/* ===== HERO (capa inicial) ===== */
+
+.hero {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 50px 20px;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f4f2f5, #f3d6ec);
+  color: #96014b;
+  text-align: center;
 }
 
-.professora-content {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  max-width: 1100px;
+.hero-content {
+  max-width: 800px;
+  margin: auto;
 }
 
-.professora-foto img {
-  width: 260px;
-  height: auto;
-  border-radius: 20px;
-  object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-}
-
-.professora-info h2 {
-  font-size: 32px;
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
   margin-bottom: 15px;
 }
 
-.professora-info p {
-  font-size: 18px;
-  text-align: justify;
-  line-height: 1.6;
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .professora-content {
-    flex-direction: column;
-    text-align: center;
-  }
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
 
-  .professora-info p {
-    text-align: center;
-  }
+.btn-primary,
+.btn-secondary {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: #ffffff;
+  color: #8b07c4;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: #e8e8e8;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.17);
+}
+
+/* ===== SEÇÃO DESTAQUES ===== */
+
+.destaques {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.destaques h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #cf29f0;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 7px rgba(212, 168, 223, 0.15);
+  transition: 0.3s;
+  border-left: 5px solid #d9a0e5;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== BENEFÍCIOS ===== */
+
+.beneficios {
+  background: #f9f2ff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.beneficios h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #e68bf7;
+}
+
+.beneficios-lista {
+  max-width: 700px;
+  margin: auto;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+}
+
+.beneficios-lista li {
+  margin-bottom: 10px;
+}
+
+/* ===== DEPOIMENTOS ===== */
+
+.depoimentos {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.depoimentos h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: rgb(247, 90, 114);
+}
+
+.depoimentos-container {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.depoimento {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.15);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border-left: 5px solid #d11bfa;
 }
