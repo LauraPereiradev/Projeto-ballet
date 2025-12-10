@@ -1,11 +1,10 @@
-/* Container geral */
+
 .home-container {
   font-family: 'Poppins', sans-serif;
   background: #fff5f8;
   color: #5a2a3a;
 }
 
-/* HERO */
 .hero {
   background: linear-gradient(135deg, #f8c6d8, #fbe3ec);
   padding: 80px 20px;
@@ -61,7 +60,6 @@
   color: white;
 }
 
-/* Destaques */
 .destaques {
   padding: 60px 20px;
   text-align: center;
@@ -91,7 +89,6 @@
   transform: translateY(-6px);
 }
 
-/* Benefícios */
 .beneficios {
   background: #fff0f5;
   padding: 60px 20px;
@@ -113,7 +110,6 @@
   font-weight: 500;
 }
 
-/* Depoimentos */
 .depoimentos {
   padding: 60px 20px;
   text-align: center;

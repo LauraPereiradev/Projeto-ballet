@@ -1,5 +1,5 @@
 main {
-    padding-top: 80px; /* Evita que o conteúdo encoste na navbar */
+    padding-top: 80px;
     min-height: calc(100vh - 80px);
     box-sizing: border-box;
   }

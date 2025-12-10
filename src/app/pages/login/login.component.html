@@ -1,9 +1,11 @@
 <div class="login-container">
 
-  <!-- FORMULÁRIO DE LOGIN -->
+  <!-- Título -->
   <h2 *ngIf="!usuarioLogado">Login</h2>
+  <h2 *ngIf="usuarioLogado">Usuário logado ✅</h2>
 
-  <form *ngIf="!usuarioLogado" #loginForm="ngForm" (ngSubmit)="fazerLogin()">
+  <!-- FORMULÁRIO -->
+  <form *ngIf="!usuarioLogado" (ngSubmit)="fazerLogin()">
 
     <label for="cpf">CPF</label>
     <input
@@ -25,31 +27,35 @@
       required
     />
 
-    <button class="btn-login" type="submit" [disabled]="loginForm.invalid">
+    <button class="btn-login" type="submit">
       Entrar
     </button>
 
     <p class="erro" *ngIf="erro">{{ erro }}</p>
   </form>
 
-  <!-- SE ESTIVER LOGADO -->
-  <div *ngIf="usuarioLogado" class="usuario-info">
-    <h2>Bem-vindo(a), {{ usuarioLogado.nome }}!</h2>
+  <!-- BLOCO USUÁRIO LOGADO -->
+  <div *ngIf="usuarioLogado" class="usuario-box">
 
+    <p><strong>Nome:</strong> {{ usuarioLogado.nome }}</p>
     <p><strong>CPF:</strong> {{ usuarioLogado.cpf }}</p>
-    <p><strong>Data de Nascimento:</strong> {{ usuarioLogado.nascimento }}</p>
+    <p><strong>Nascimento:</strong> {{ usuarioLogado.nascimento }}</p>
 
     <button class="btn-sair" (click)="sair()">Sair</button>
+
   </div>
 
-  <!-- CADASTRO -->
-  <p class="cadastro-texto" *ngIf="!usuarioLogado">Não possui cadastro?</p>
+  <div *ngIf="!usuarioLogado">
 
-  <button class="btn-cadastro" *ngIf="!usuarioLogado" routerLink="/cadastro">
-    Criar conta
-  </button>
+    <p class="cadastro-texto">Não possui cadastro?</p>
 
-  <!-- BOTÃO WHATSAPP -->
+    <button class="btn-cadastro" routerLink="/cadastro">
+      Criar conta
+    </button>
+
+  </div>
+
+  <!-- WHATSAPP -->
   <div class="whatsapp-box">
     <button class="whatsapp-btn" (click)="enviarWhatsApp()">
       <img src="img/wpp.jpg" alt="WhatsApp">

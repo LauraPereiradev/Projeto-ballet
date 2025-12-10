@@ -32,7 +32,9 @@ export class AulasComponent implements OnInit, OnDestroy {
     '33.jpg',
     '38.jpg',
     '39.jpg',
-  ];
+    'img3,jpg',
+    'img4.jpg',
+    'img5.jpg'];
 
 
   imagemAtual = 0;
@@ -51,7 +53,7 @@ export class AulasComponent implements OnInit, OnDestroy {
   iniciarCarrosselAutomatico() {
     this.intervalo = setInterval(() => {
       this.proximaImagem();
-    }, 3000); // 3 segundos
+    }, 3000);
   }
 
   proximaImagem() {

@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
@@ -7,10 +8,11 @@ import { Observable, tap } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:3002'; // URL da API
+  private apiUrl = 'http://localhost:3002';
 
   constructor(private http: HttpClient) {}
 
+  
   cadastrarUsuario(usuario: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/cadastro`, usuario);
   }
@@ -18,18 +20,28 @@ export class AuthService {
   login(cpf: string, nascimento: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, { cpf, nascimento }).pipe(
       tap((res: any) => {
-        if (res && res.token) {
-          localStorage.setItem('userToken', res.token); // salva token no login
+        if (res?.token) {
+          localStorage.setItem('userToken', res.token);
+        }
+
+      
+        if (res?.usuario) {
+          localStorage.setItem('usuario', JSON.stringify(res.usuario));
         }
       })
     );
   }
 
-  logout() {
+  logout(): void {
     localStorage.removeItem('userToken');
+    localStorage.removeItem('usuario');
+  }
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('userToken');
   }
 
-  isLoggedIn(): boolean {
-    return !!localStorage.getItem('userToken'); // checa se há token
+  getUsuario() {
+    const user = localStorage.getItem('usuario');
+    return user ? JSON.parse(user) : null;
   }
 }

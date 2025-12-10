@@ -13,5 +13,5 @@ export const routes: Routes = [
   { path: 'sobre', component: SobreComponent },
   { path: 'aulas', component: AulasComponent },
   { path: 'contato', component: ContatoComponent },
-  { path: 'cadastro', component: CadastroComponent } // ✔ apenas 1 vez
+  { path: 'cadastro', component: CadastroComponent }
 ];

@@ -5,18 +5,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Banco de dados temporário (em memória)
 let usuarios = [
   { id: 1, nome: "Ana Laura", cpf: "11111111111", nascimento: "2005-10-10" },
   { id: 2, nome: "João Silva", cpf: "22222222222", nascimento: "2000-05-20" }
 ];
 
-// Status da API
 app.get('/', (req, res) => {
   res.send({ status: "API rodando corretamente!" });
 });
 
-// LOGIN
 app.post('/login', (req, res) => {
   const { cpf, nascimento } = req.body;
 
@@ -31,7 +28,6 @@ app.post('/login', (req, res) => {
   res.json(usuario);
 });
 
-// CADASTRO
 app.post('/cadastro', (req, res) => {
   const { nome, cpf, nascimento } = req.body;
 
@@ -39,14 +35,12 @@ app.post('/cadastro', (req, res) => {
     return res.status(400).json({ erro: "Dados incompletos" });
   }
 
-  // Verificar se CPF já existe
   const existe = usuarios.some(u => u.cpf === cpf);
 
   if (existe) {
     return res.status(409).json({ erro: "Este CPF já está cadastrado." });
   }
 
-  // Criar ID automático
   const novoUsuario = {
     id: usuarios.length + 1,
     nome,
@@ -63,7 +57,6 @@ app.post('/cadastro', (req, res) => {
   });
 });
 
-// Porta única
 const PORT = 3002;
 
 app.listen(PORT, () => {

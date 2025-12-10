@@ -1,20 +1,19 @@
-/* CONTAINER PRINCIPAL */
 .cadastro-container {
   max-width: 420px;
   margin: 45px auto;
   padding: 30px;
-  background: #fff5fa; /* Rosa pastel bem leve */
+  background: #fff5fa; 
   border-radius: 18px;
   box-shadow: 0px 6px 18px rgba(255, 150, 190, 0.25);
   font-family: "Poppins", sans-serif;
-  border: 1px solid #ffd6e8; /* contorno leve */
+  border: 1px solid #ffd6e8; 
 }
 
 /* TÍTULO */
 .cadastro-container h2 {
   text-align: center;
   margin-bottom: 22px;
-  color: #d13b8b; /* rosa elegante */
+  color: #d13b8b; 
   font-weight: 700;
   font-size: 24px;
 }
@@ -24,7 +23,7 @@ label {
   display: block;
   margin-bottom: 6px;
   font-weight: 600;
-  color: #a63d72; /* rosa queimado */
+  color: #a63d72; 
   font-size: 14px;
 }
 
@@ -47,7 +46,7 @@ input:focus {
   box-shadow: 0px 0px 8px rgba(209, 59, 139, 0.35);
 }
 
-/* CHECKBOX LGPD */
+
 .lgpd-box {
   display: flex;
   gap: 10px;
@@ -56,7 +55,7 @@ input:focus {
 }
 
 .lgpd-box input {
-  accent-color: #d13b8b; /* deixa o checkbox rosa */
+  accent-color: #d13b8b; 
 }
 
 .lgpd-box label {
@@ -65,7 +64,6 @@ input:focus {
   line-height: 1.3rem;
 }
 
-/* BOTÃO CADASTRAR */
 .btn-cadastro {
   width: 100%;
   padding: 13px;

@@ -46,7 +46,7 @@
       </label>
     </div>
 
-    <!-- ❗ REMOVIDO O routerLink -->
+
     <button class="btn-cadastro" type="submit" [disabled]="cadastroForm.invalid || !lgpdAceito">
       Cadastrar
     </button>
@@ -55,8 +55,9 @@
   </form>
   
 
-  <!-- PAINEL DO USUÁRIO LOGADO -->
+  
   <div *ngIf="usuarioLogado" class="usuario-info">
+
     <h2>Bem-vindo(a), {{ usuarioLogado.nome }}!</h2>
     <p><strong>CPF:</strong> {{ usuarioLogado.cpf }}</p>
     <p><strong>Data de Nascimento:</strong> {{ usuarioLogado.nascimento }}</p>

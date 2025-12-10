@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ContatoComponent {
 
-  // Troque pelo número real da academia (com DDD)
+  
   numeroWhatsApp = '5571999616997';
 
   form = {
@@ -22,7 +22,7 @@ export class ContatoComponent {
 
   enviarFormulario() {
     const texto = `
-*Novo contato pelo site* 💬
+*Novo contato pelo site*
 
 Nome: ${this.form.nome}
 Email: ${this.form.email}

@@ -73,7 +73,6 @@ textarea:focus {
   cursor: not-allowed;
 }
 
-/* RESPONSIVO */
 
 @media (max-width: 600px) {
   h1 {

@@ -28,7 +28,7 @@ export class CadastroComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Mantém usuário logado se houver token
+    
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['/dashboard']);
     }
@@ -57,17 +57,17 @@ export class CadastroComponent implements OnInit {
     this.authService.cadastrarUsuario(usuario).subscribe({
       next: (res: any) => {
         if (res.token) {
-          // Salva token para o Auth Guard
+          
           localStorage.setItem('userToken', res.token);
         }
 
         this.sucesso = res.mensagem || 'Cadastro realizado com sucesso!';
         this.usuarioLogado = res.usuario;
 
-        // Redireciona automaticamente para dashboard
+        
         this.router.navigate(['/dashboard']);
 
-        // reset do formulário
+        
         form.resetForm({
           nome: '',
           cpf: '',
@@ -89,7 +89,7 @@ export class CadastroComponent implements OnInit {
 
   sair() {
     this.usuarioLogado = null;
-    this.authService.logout(); // limpa token
+    this.authService.logout(); 
     this.router.navigate(['/login']);
   }
 }

@@ -10,5 +10,5 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  // Futuramente você pode adicionar aqui carrossel, depoimentos dinâmicos etc.
+  
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { AuthService } from '../../services/auth.service'; // <- caminho corrigido
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,20 +12,30 @@ import { AuthService } from '../../services/auth.service'; // <- caminho corrigi
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+limitarCPF() {
+throw new Error('Method not implemented.');
+}
+enviarWhatsApp() {
+throw new Error('Method not implemented.');
+}
 
   cpf = '';
   nascimento = '';
   erro = '';
-  usuario = {
-    nome: '',
-    telefone: ''
-  };
-usuarioLogado: any;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  usuarioLogado: any = null;
 
-  limitarCPF() {
-    this.cpf = this.cpf.replace(/\D/g, '').slice(0, 11);
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    // Mantém logado ao voltar para a tela
+    const usuarioStr = localStorage.getItem('usuario');
+    if (usuarioStr) {
+      this.usuarioLogado = JSON.parse(usuarioStr);
+    }
   }
 
   fazerLogin() {
@@ -36,11 +46,17 @@ usuarioLogado: any;
 
     this.authService.login(this.cpf, this.nascimento).subscribe({
       next: (res: any) => {
-        if (res.token) {
-          localStorage.setItem('userToken', res.token);
-        }
+
+        this.usuarioLogado = {
+          nome: res?.usuario?.nome || 'Usuário Logado',
+          cpf: this.cpf,
+          nascimento: this.nascimento
+        };
+
+        // Salva o usuário
+        localStorage.setItem('usuario', JSON.stringify(this.usuarioLogado));
+
         this.erro = '';
-        this.router.navigate(['/dashboard']);
       },
       error: () => {
         this.erro = 'CPF ou data de nascimento inválidos';
@@ -50,20 +66,7 @@ usuarioLogado: any;
 
   sair() {
     this.authService.logout();
-    this.cpf = '';
-    this.nascimento = '';
-    this.router.navigate(['/login']);
-  }
-
-  enviarWhatsApp() {
-    const numero = '55999616997';
-    const mensagem = `
-Olá! Quero agendar uma aula 💗
-Nome: ${this.usuario.nome}
-Telefone: ${this.usuario.telefone}
-CPF: ${this.cpf}
-    `;
-    const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-    window.open(link, '_blank');
+    localStorage.removeItem('usuario');
+    this.usuarioLogado = null;
   }
 }
