@@ -1,0 +1,266 @@
+/* ===== CONTAINER PRINCIPAL ===== */
+.login-container {
+  width: 380px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* ===== TÍTULO ===== */
+.login-container h2 {
+  font-size: 26px;
+  color: #c76ba5;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ===== INPUTS ===== */
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  border: 2px solid #f3c6da;
+  background: #fafafa;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  border-color: #c76ba5;
+  box-shadow: 0 0 6px #f3c6da;
+}
+
+/* ===== BOTÕES ===== */
+.btn-login,
+.btn-cadastro,
+.btn-sair {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Botão LOGIN */
+.btn-login {
+  background: #c76ba5;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-login:hover {
+  background: #b45995;
+}
+
+/* Botão CRIAR CONTA */
+.btn-cadastro {
+  background: #f3c6da;
+  color: #333;
+  font-weight: bold;
+}
+
+.btn-cadastro:hover {
+  background: #e6b1ca;
+}
+
+/* Botão SAIR */
+.btn-sair {
+  background: #e6a7c8;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-sair:hover {
+  background: #d78ab5;
+}
+
+/* ===== ERROS ===== */
+.erro {
+  color: #d9537f;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* ===== TEXTO INFORMATIVO ===== */
+.cadastro-texto {
+  margin-top: 20px;
+  color: #555;
+}
+
+/* ===== PAINEL DE USUÁRIO LOGADO ===== */
+.usuario-info {
+  background: #ffffff;
+  padding: 25px;
+  width: 380px;
+  margin: 30px auto;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.usuario-info h2 {
+  color: #c76ba5;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.usuario-info p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Container geral */
+.login-container {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(183, 110, 167, 0.15);
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Título */
+.login-container h1,
+.login-container h2 {
+  text-align: center;
+  color: #b76ea7;
+  margin-bottom: 25px;
+}
+
+/* Campos */
+.campo {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.campo input {
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #e8c9df;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.campo input:focus {
+  border-color: #b76ea7;
+  box-shadow: 0 0 0 2px rgba(183, 110, 167, 0.12);
+}
+
+/* Botões padrão */
+.btn-login,
+.btn-cadastro,
+.btn-sair {
+  width: 100%;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  font-size: 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-login,
+.btn-cadastro {
+  background: linear-gradient(135deg, #c58bb4, #b76ea7);
+  color: #fff;
+}
+
+.btn-login:hover,
+.btn-cadastro:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(183, 110, 167, 0.35);
+}
+
+.btn-sair {
+  background: #f2f2f2;
+  color: #777;
+}
+
+/* Texto auxiliar */
+.cadastro-texto {
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.erro {
+  margin-top: 15px;
+  color: #e53935;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* === NOVA ÁREA WHATSAPP === */
+
+.whatsapp-box {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.whatsapp-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  padding: 16px 18px;
+  border-radius: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.25s ease;
+  box-shadow: 0 12px 25px rgba(37, 211, 102, 0.35);
+}
+
+.whatsapp-btn img {
+  width: 22px;
+  height: 22px;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  background: #1ebe5c;
+  box-shadow: 0 16px 35px rgba(37, 211, 102, 0.45);
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 20px;
+    margin: 30px 15px;
+  }
+}
