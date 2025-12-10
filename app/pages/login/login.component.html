@@ -1,0 +1,60 @@
+<div class="login-container">
+
+  <!-- FORMULÁRIO DE LOGIN -->
+  <h2 *ngIf="!usuarioLogado">Login</h2>
+
+  <form *ngIf="!usuarioLogado" #loginForm="ngForm" (ngSubmit)="fazerLogin()">
+
+    <label for="cpf">CPF</label>
+    <input
+      type="text"
+      id="cpf"
+      name="cpf"
+      [(ngModel)]="cpf"
+      (input)="limitarCPF()"
+      required
+      placeholder="Digite seu CPF"
+    />
+
+    <label for="nascimento">Data de Nascimento</label>
+    <input
+      type="date"
+      id="nascimento"
+      name="nascimento"
+      [(ngModel)]="nascimento"
+      required
+    />
+
+    <button class="btn-login" type="submit" [disabled]="loginForm.invalid">
+      Entrar
+    </button>
+
+    <p class="erro" *ngIf="erro">{{ erro }}</p>
+  </form>
+
+  <!-- SE ESTIVER LOGADO -->
+  <div *ngIf="usuarioLogado" class="usuario-info">
+    <h2>Bem-vindo(a), {{ usuarioLogado.nome }}!</h2>
+
+    <p><strong>CPF:</strong> {{ usuarioLogado.cpf }}</p>
+    <p><strong>Data de Nascimento:</strong> {{ usuarioLogado.nascimento }}</p>
+
+    <button class="btn-sair" (click)="sair()">Sair</button>
+  </div>
+
+  <!-- CADASTRO -->
+  <p class="cadastro-texto" *ngIf="!usuarioLogado">Não possui cadastro?</p>
+
+  <button class="btn-cadastro" *ngIf="!usuarioLogado" routerLink="/cadastro">
+    Criar conta
+  </button>
+
+  <!-- BOTÃO WHATSAPP -->
+  <div class="whatsapp-box">
+    <button class="whatsapp-btn" (click)="enviarWhatsApp()">
+      <img src="img/wpp.jpg" alt="WhatsApp">
+      Quero agendar uma aula
+    </button>
+  </div>
+
+</div>
