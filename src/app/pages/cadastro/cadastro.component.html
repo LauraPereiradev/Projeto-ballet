@@ -1,0 +1,69 @@
+<div class="cadastro-container">
+
+  <h2 *ngIf="!usuarioLogado">Cadastro de Usuário</h2>
+
+  <!-- FORMULÁRIO DE CADASTRO -->
+  <form *ngIf="!usuarioLogado" #cadastroForm="ngForm" (ngSubmit)="registrar(cadastroForm)">
+    
+    <label>Nome</label>
+    <input 
+      type="text" 
+      name="nome" 
+      [(ngModel)]="nome" 
+      required 
+      placeholder="Seu nome completo"
+    />
+
+    <label>CPF</label>
+    <input 
+      type="text" 
+      name="cpf" 
+      [(ngModel)]="cpf" 
+      (input)="limitarCPF()" 
+      maxlength="11" 
+      required 
+      placeholder="Digite seu CPF"
+    />
+
+    <label>Data de Nascimento</label>
+    <input 
+      type="date" 
+      name="nascimento" 
+      [(ngModel)]="nascimento" 
+      required
+    />
+
+    <div class="lgpd-box">
+      <input 
+        type="checkbox" 
+        id="lgpd" 
+        name="lgpd" 
+        [(ngModel)]="lgpdAceito" 
+        required
+      />
+      <label for="lgpd">
+        Concordo com a política de privacidade e autorizo o uso dos meus dados conforme a <a href="https://www.gov.br/mds/pt-br/acesso-a-informacao/privacidade-e-protecao-de-dados/lgpd">LGPD</a>.
+      </label>
+    </div>
+
+
+    <button class="btn-cadastro" type="submit" [disabled]="cadastroForm.invalid || !lgpdAceito">
+      Cadastrar
+    </button>
+
+    <p class="erro" *ngIf="erro">{{ erro }}</p>
+  </form>
+  
+
+  
+  <div *ngIf="usuarioLogado" class="usuario-info">
+
+    <h2>Bem-vindo(a), {{ usuarioLogado.nome }}!</h2>
+    <p><strong>CPF:</strong> {{ usuarioLogado.cpf }}</p>
+    <p><strong>Data de Nascimento:</strong> {{ usuarioLogado.nascimento }}</p>
+
+
+    <button class="btn-sair" (click)="sair()">Sair</button>
+  </div>
+
+</div>

@@ -1,0 +1,90 @@
+.cadastro-container {
+  max-width: 420px;
+  margin: 45px auto;
+  padding: 30px;
+  background: #fff5fa; 
+  border-radius: 18px;
+  box-shadow: 0px 6px 18px rgba(255, 150, 190, 0.25);
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #ffd6e8; 
+}
+
+/* TÍTULO */
+.cadastro-container h2 {
+  text-align: center;
+  margin-bottom: 22px;
+  color: #d13b8b; 
+  font-weight: 700;
+  font-size: 24px;
+}
+
+/* LABELS */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #a63d72; 
+  font-size: 14px;
+}
+
+/* INPUTS */
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #f3b6d3;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: 0.3s;
+  font-size: 14px;
+  background: #fff;
+}
+
+input:focus {
+  border-color: #d13b8b;
+  box-shadow: 0px 0px 8px rgba(209, 59, 139, 0.35);
+}
+
+
+.lgpd-box {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.lgpd-box input {
+  accent-color: #d13b8b; 
+}
+
+.lgpd-box label {
+  font-size: 13px;
+  color: #7a355c;
+  line-height: 1.3rem;
+}
+
+.btn-cadastro {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #d13b8b, #ff77b7);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btn-cadastro:hover {
+  background: linear-gradient(135deg, #b82f77, #ff5fa9);
+}
+
+.btn-cadastro:disabled {
+  background: #e9b6d1;
+  cursor: not-allowed;
+  color: #ffffffc9;
+}
+

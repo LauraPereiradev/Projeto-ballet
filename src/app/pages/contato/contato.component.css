@@ -1,0 +1,81 @@
+.contato-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #4a4a4a;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #c58bb4;
+  margin-bottom: 20px;
+}
+
+.intro {
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #777;
+}
+
+input,
+textarea {
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid #f0cfe6;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #c58bb4;
+  box-shadow: 0 0 0 3px rgba(197, 139, 180, 0.15);
+}
+
+.btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #c58bb4, #b76ea7);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 12px 30px rgba(183, 110, 167, 0.35);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(183, 110, 167, 0.45);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,74 @@
+<div class="aulas-container">
+
+  <h1 class="titulo">Nossas Turmas</h1>
+
+  <div class="carousel-box">
+
+    <button class="nav prev" (click)="imagemAnterior()">❮</button>
+
+    <img
+      [src]="'img/' + imagens[imagemAtual]"
+      class="carousel-img"
+      alt="Imagem das aulas">
+
+    <button class="nav next" (click)="proximaImagem()">❯</button>
+
+  </div>
+
+  <p class="intro">
+    Conheça nossas turmas organizadas por faixa etária e nível.
+    Cada aula é preparada com carinho, técnica e atenção individual.
+  </p>
+
+  <div class="turmas-grid">
+
+    <div class="dia">
+      <h2>Segunda e Quarta</h2>
+      <ul>
+        <li>10:00 — Baby 1 (2 anos e 6 meses)</li>
+        <li>15:00 — Baby 2 (4 anos)</li>
+        <li>16:00 — Pré-Primary</li>
+        <li>17:00 — Preparatório</li>
+      </ul>
+    </div>
+
+    <div class="dia">
+      <h2>Terça e Quinta</h2>
+      <ul>
+        <li>09:00 — Iniciação (4 anos)</li>
+        <li>10:00 — Baby 2 (5 anos)</li>
+        <li>16:00 — 4º Grau</li>
+        <li>17:00 — Preparatório (a partir de 9 anos)</li>
+        <li>18:00 — Primary 1</li>
+      </ul>
+    </div>
+
+    <div class="dia">
+      <h2>Sexta-feira</h2>
+      <ul>
+        <li>17:00 — Preparatório</li>
+      </ul>
+    </div>
+
+    <div class="dia">
+      <h2>Sábado</h2>
+      <ul>
+        <li>08:00 — 7º Grau</li>
+      </ul>
+    </div>
+
+    <div class="dia pilates">
+      <h2>🧘 Pilates</h2>
+      <ul>
+        <li>Segunda a Sexta — 18:00</li>
+        <li>Terça e Quinta — 16:00</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <a class="btn-contato" routerLink="/cadastro">
+    Quero me inscrever
+  </a>
+
+</div>

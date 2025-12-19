@@ -1,0 +1,35 @@
+<div class="contato-container">
+  <h1>Fale Conosco</h1>
+
+  <p class="intro">
+    Quer tirar dúvidas, agendar uma aula experimental ou saber mais sobre as modalidades?
+    Envie sua mensagem abaixo!
+  </p>
+
+  <form (ngSubmit)="enviarFormulario()" #formContato="ngForm">
+
+    <div class="campo">
+      <label>Nome</label>
+      <input type="text" name="nome" [(ngModel)]="form.nome" required />
+    </div>
+
+    <div class="campo">
+      <label>E-mail</label>
+      <input type="email" name="email" [(ngModel)]="form.email" required />
+    </div>
+
+    <div class="campo">
+      <label>Telefone</label>
+      <input type="text" name="telefone" [(ngModel)]="form.telefone" />
+    </div>
+
+    <div class="campo">
+      <label>Mensagem</label>
+      <textarea name="mensagem" rows="5" [(ngModel)]="form.mensagem" required></textarea>
+    </div>
+
+    <button type="submit" class="btn" [disabled]="formContato.invalid">
+      Enviar Mensagem
+    </button>
+  </form>
+</div>
